@@ -1,0 +1,67 @@
+<div id="selectionView" class="container-fluid">
+	<div class="panel {{theme.panel}}">
+		<div class="panel-heading h5-cursor-pointer" ng-model="collapseSel"
+			ng-click="collapseSel=!collapseSel">
+			<img class="h5-icon" ng-src="img/selection-icon.png"
+				title="{{::languageConstants.get('Selection')}}" alt="" />{{::languageConstants.get('Applications List')}}
+
+		</div>
+		<div>
+			<button class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.openAppManager()">{{::languageConstants.get('Manage
+				')}}</button>
+		</div>
+		<!-- 
+		<div class="table-responsive h5-padding-md" ng-if="!collapseSel">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<table class="inlineTable">
+						<tr class="h5-color-graphite">
+							<td><h5>{{::languageConstants.get('Table Name')}}</h5></td>
+							<td><ui-select name="TableName"
+									class="h5-input-md {{theme.h5Dropdown}}"
+									ng-model="globalSelection.ZCSYTABTable.selected"
+									theme="bootstrap"
+									on-select="AppCtrl.sampleData1Selected($item.PK01)">
+								<ui-select-match
+									placeholder="{{::languageConstants.get('Select ZSYTAB Table')}}">{{$select.selected.PK01
+								+ ' - ' +$select.selected.AL30}}</ui-select-match> <ui-select-choices
+									repeat="ZCSYTABTable.PK01 as ZCSYTABTable in globalSelection.ZCSYTABTableList | filter: $select.search track by ZCSYTABTable.PK01">
+								<span
+									ng-bind-html="ZCSYTABTable.PK01 | highlight: $select.search"></span>
+								- <small
+									ng-bind-html="ZCSYTABTable.AL30 | highlight: $select.search"></small></ui-select-choices>
+								</ui-select></td>
+								
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="pager h5-margin-auto">
+						<ul>
+							<li><button class="h5Button {{theme.button}}"
+									ng-click="AppCtrl.findButtonClick()">{{::languageConstants.get('Find')}}</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>			
+		</div> -->
+		<div id="ZSYTABListGrid" ui-grid="globalSelection.ZSYTABListGrid"
+			ng-class="theme.h5Grid" class="h5Grid"
+			ng-if="!modelobject.collapseUIGrid1" ui-grid-selection
+			ui-grid-resize-columns ui-grid-move-columns ui-grid-auto-resize
+			ui-grid-cellNav ui-grid-exporter ui-grid-save-state ui-grid-pinning
+			ui-grid-edit>
+			<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+
+			</tr>
+		</div>
+		<div>
+			<button class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.closeWindow()">{{::languageConstants.get('Close
+				')}}</button>
+		</div>
+	</div>
+</div>

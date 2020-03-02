@@ -1,0 +1,17 @@
+{
+	"name": "Table viewer",
+	"description": "A way to manage CUGEX2/3 Tables created",
+	"version": "1.0.0-1/25/2019",
+	"main": "dev-web-server.js",
+	"dependencies": {
+		"connect": "*",
+		"recursive-copy": "*",
+		"serve-static": "*",
+		"zip-dir": "*"
+	},
+	"engines": {
+		"node": "0.10.*"
+	},
+	"license": "http://leanswift.com/leanswift-eula/",
+	"private": true
+}
